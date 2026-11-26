@@ -38,11 +38,20 @@ body {
 }
 
 .logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   font-size: 22px;
   font-weight: 700;
   color: #1d1d1f;
   text-decoration: none;
   white-space: nowrap;
+}
+
+.apple-icon {
+  width: 20px;
+  height: 20px;
+  transform: translateY(-1px);
 }
 
 .search-box {
