@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>iStore - Chuyên iPhone Chính Hãng</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Thanh điều hướng -->
+    <header class="navbar">
+      <div class="container nav-content">
+        <a href="#" class="logo"> iStore</a>
+
+        <div class="search-box">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Tìm iPhone (VD: 16 Pro Max, 15, 14...)"
+          />
+        </div>
+
+        <button class="cart-btn" onclick="toggleCart()">
+          Giỏ hàng (<span id="cartCount">0</span>)
+        </button>
+      </div>
+    </header>
+
+    <!-- Banner đơn giản -->
+    <section class="hero">
+      <div class="container">
+        <h1>Chọn chiếc iPhone dành cho bạn.</h1>
+        <p>Thiết kế tinh tế. Hiệu năng vượt trội. Giao hàng tận nơi.</p>
+      </div>
+    </section>
+
+    <!-- Danh sách sản phẩm -->
+    <main class="container">
+      <div id="productGrid" class="product-grid">
+        <!-- Sản phẩm sẽ được render tự động bằng JavaScript -->
+      </div>
+      <p id="noResult" class="no-result" style="display: none">
+        Không tìm thấy dòng iPhone phù hợp.
+      </p>
+    </main>
+
+    <!-- Cửa sổ Giỏ hàng & Đặt hàng (Modal) -->
+    <div id="cartModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Giỏ hàng của bạn</h2>
+          <span class="close-btn" onclick="toggleCart()">&times;</span>
+        </div>
+
+        <div id="cartItems" class="cart-items">
+          <!-- Danh sách iPhone đã chọn -->
+        </div>
+
+        <div class="cart-total">Tổng cộng: <span id="totalPrice">0₫</span></div>
+
+        <!-- Form thông tin giao hàng -->
+        <form
+          id="checkoutForm"
+          class="checkout-form"
+          onsubmit="placeOrder(event)"
+        >
+          <h3>Thông tin giao hàng</h3>
+          <input
+            type="text"
+            id="customerName"
+            placeholder="Họ và tên người nhận"
+            required
+          />
+          <input
+            type="tel"
+            id="customerPhone"
+            placeholder="Số điện thoại liên hệ"
+            required
+          />
+          <textarea
+            id="customerAddress"
+            rows="3"
+            placeholder="Địa chỉ giao hàng chi tiết (Số nhà, đường, phường/xã, quận/huyện, tỉnh/thành phố)"
+            required
+          ></textarea>
+          <button type="submit" class="order-btn">Xác nhận đặt mua</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
